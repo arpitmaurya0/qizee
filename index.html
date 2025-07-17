@@ -131,7 +131,7 @@
 
         <header class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-extrabold mb-2">✨ AI-Powered Study Boosters ✨</h1>
-            <p class="text-lg text-[#366E8A]">Leverage AI to get instant interview questions and personalized study tips to supercharge your preparation.</p>
+            <p class="text-lg text-[#366E8A]">Leverage AI to get instant questions and personalized study tips to supercharge your preparation.</p>
             
             <!-- Timer Section -->
             <div class="timer-display-container" style="text-align: center; margin-top: 1.5rem; margin-bottom: 1.5rem;">
@@ -194,8 +194,8 @@
         <section id="ai-features" class="mb-16">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="card md:col-span-2">
-                    <h3 class="text-2xl font-bold mb-4">✨ Interview Question Generator</h3>
-                    <p class="text-[#366E8A] mb-4">Select a subject and get 5 common interview questions to practice your knowledge.</p>
+                    <h3 class="text-2xl font-bold mb-4">✨ Question Generator</h3>
+                    <p class="text-[#366E8A] mb-4">Select a subject and get 5 questions to practice your knowledge.</p>
     <div class="flex flex-col sm:flex-row gap-4 mb-4 justify-between">
         <input id="subjectInput" type="text" placeholder="Enter subject" class="p-1 text-sm border border-[#A8CAD9] rounded-md flex-1 max-w-xs" />
         <input id="topicInput" type="text" placeholder="Enter topic" class="p-1 text-sm border border-[#A8CAD9] rounded-md flex-1 max-w-xs" />
@@ -210,7 +210,7 @@
         </select>
         <button id="generateQuestionBtn" class="ai-button">Generate Questions</button>
     </div>
-                    <div id="interviewQuestionOutput" class="ai-output">Your interview questions will appear here.</div>
+                    <div id="interviewQuestionOutput" class="ai-output">Your questions will appear here.</div>
                 </div>
 
                 <div class="card md:col-span-2">
@@ -299,7 +299,7 @@ document.getElementById('generateQuestionBtn').addEventListener('click', async (
         return;
     }
 
-    let prompt = `Generate 5 multiple-choice questions for a technical interview at a service-based company for a B.Tech student on the topic of ${topic} in the subject ${subject}. Each question should have exactly 4 options. For each question, indicate the correct answer index (0-3). The questions should be clear and concise. Provide the output as a JSON array of objects, where each object has 'question', 'options' (an array of 4 strings), and 'correctAnswerIndex' (a number). Difficulty level is ${difficulty}. The questions should be generated in ${language}.`;
+    let prompt = `Generate 5 multiple-choice questions suitable for UPPCS or UPSC (Civil services) preliminary exams on the topic of ${topic} in the subject ${subject}. Each question must be conceptually deep, analytically challenging, or factually significant, suitable for competitive exam aspirants. Each question should have exactly 4 options. For each question, indicate the correct answer index (0-3). The questions should be clear and concise. Provide the output as a JSON array of objects, where each object has 'question', 'options' (an array of 4 strings), and 'correctAnswerIndex' (a number). Difficulty level is ${difficulty}. The questions should be generated in ${language}.`;
 
     const mcqSchema = {
         type: "ARRAY",
